@@ -6,7 +6,7 @@
 /*   By: acobbaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 18:08:45 by acobbaer          #+#    #+#             */
-/*   Updated: 2026/02/06 18:32:52 by acobbaer         ###   ########.fr       */
+/*   Updated: 2026/02/06 20:04:26 by acobbaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@
 
 typedef struct s_stack
 {
-	int					value;
-	int					index;
-	int					pos;
-	int					cost_a;
-	int					cost_b;
-	struct s_stack		*target;
-	struct s_stack		*prev;
-	struct s_stack		*next;
+	struct s_stack	*target;
+	struct s_stack	*prev;
+	struct s_stack	*next;
 	bool			above_median;
+	int				value;
+	int				index;
+	int				pos;
+	int				cost_a;
+	int				cost_b;
 }			t_stack;
 
 //Parse arguments

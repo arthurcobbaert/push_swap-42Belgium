@@ -6,7 +6,7 @@
 /*   By: acobbaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 16:10:33 by acobbaer          #+#    #+#             */
-/*   Updated: 2026/02/06 18:28:39 by acobbaer         ###   ########.fr       */
+/*   Updated: 2026/02/06 19:49:07 by acobbaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_stack	*init_stack_a(char **args)
 {
+	int		i;
+	long	num;
 	t_stack	*stack_a;
 	t_stack	*new_node;
-	int			i;
-	long int		num;
 
 	stack_a = NULL;
 	i = 0;

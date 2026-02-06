@@ -6,7 +6,7 @@
 /*   By: acobbaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:49:07 by acobbaer          #+#    #+#             */
-/*   Updated: 2026/02/06 15:52:22 by acobbaer         ###   ########.fr       */
+/*   Updated: 2026/02/06 19:33:45 by acobbaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	assign_pos(t_stack *stack)
 
 void	find_target_node(t_stack **stack_a, t_stack **stack_b)
 {
-	long		closest_value;
 	t_stack		*curr_a;
 	t_stack		*curr_b;
 	t_stack		*target_node;
@@ -101,18 +100,15 @@ void	find_target_node(t_stack **stack_a, t_stack **stack_b)
 	while (curr_a)
 	{
 		target_node = NULL;
-		closest_value = INT_MIN;
 		curr_b = *stack_b;
 		while (curr_b)
 		{
-			if (curr_b->value < curr_a->value && curr_b->value > closest_value)
-			{
-				closest_value = curr_b->value;
+			if (curr_b->value < curr_a->value
+				&& (!target_node || curr_b->value > target_node->value))
 				target_node = curr_b;
-			}
 			curr_b = curr_b->next;
 		}
-		if (closest_value == INT_MIN)
+		if (!target_node)
 			curr_a->target = find_max(*stack_b);
 		else
 			curr_a->target = target_node;

@@ -6,7 +6,7 @@
 /*   By: acobbaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 18:08:31 by acobbaer          #+#    #+#             */
-/*   Updated: 2026/02/06 18:26:05 by acobbaer         ###   ########.fr       */
+/*   Updated: 2026/02/06 19:34:52 by acobbaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,9 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	assign_index(stack_a);
 	push_swap(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
 	if (argc == 2)
 		free_argv(args);
-	return (0);
+	return (free_stack(&stack_a), free_stack(&stack_b), 0);
 }
 
 /*
