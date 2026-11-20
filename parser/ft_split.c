@@ -65,12 +65,15 @@ char	**ft_split(char	*str, char c)
 	res = malloc(sizeof(char *) * (count_words(str, c) + 1));
 	if (!res)
 		return (NULL);
+	res[0] = NULL;
 	while (str[i])
 	{
 		if ((i > 0 && str[i - 1] == c && str[i] != c)
 			|| (i == 0 && str[i] != c))
 		{
 			res[j] = copy_word(str + i, c);
+			if (!res[j])
+				return (free_argv(res), NULL);
 			j++;
 		}
 		i++;

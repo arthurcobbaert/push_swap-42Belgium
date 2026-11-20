@@ -39,3 +39,11 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test:
+	@bash tests/run_tests.sh
+
+visualize: $(NAME)
+	@python3 visualizer/visualize.py
+
+.PHONY: all clean fclean re test visualize

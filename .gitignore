@@ -1,0 +1,4 @@
+tests/build/
+*.o
+push_swap
+__pycache__/
